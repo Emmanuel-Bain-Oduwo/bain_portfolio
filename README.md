@@ -1,4 +1,4 @@
-# bain.me — Emmanuel Bain Oduwo
+# Emmanuel Bain Oduwo
 
 My personal portfolio. Live at **[www.bain.me](https://www.bain.me)**.
 
