@@ -88,6 +88,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.bainiac.me',
   },
   category: 'technology',
+  verification: {
+    google: 'MOpMpC7zEDjlw_o2EEfwIY4imHUidnvvxFnztECcpTo',
+  },
 }
 
 export default function RootLayout({
