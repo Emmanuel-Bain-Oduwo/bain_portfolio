@@ -34,7 +34,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 pointer-events-auto ${
         scrolled
           ? 'bg-main border-b border-color backdrop-blur-sm'
           : 'bg-transparent'
@@ -89,30 +89,37 @@ export default function Navbar() {
         {mobileOpen && (
           <motion.div
             id="mobile-menu"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.15 }}
-            className="md:hidden bg-main border-b border-color"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden fixed inset-0 z-40"
+            style={{ background: 'rgba(8,13,10,0.97)', backdropFilter: 'blur(12px)' }}
           >
-            <div className="container-main py-4 flex flex-col gap-1">
-              {NAV_LINKS.map((link) => (
-                <a
+            <div className="flex flex-col items-center justify-center h-full gap-6 px-8">
+              {NAV_LINKS.map((link, i) => (
+                <motion.a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="py-3 px-2 text-sm font-medium text-muted hover:text-accent transition-colors duration-150 border-b border-color last:border-0"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.06 }}
+                  className="text-2xl font-heading font-semibold text-white hover:text-accent transition-colors duration-150"
                 >
                   {link.label}
-                </a>
+                </motion.a>
               ))}
-              <a
+              <motion.a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="mt-3 btn-primary justify-center"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: NAV_LINKS.length * 0.06 }}
+                className="mt-4 btn-green text-base"
               >
                 Get in touch
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         )}

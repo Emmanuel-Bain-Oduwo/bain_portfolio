@@ -320,6 +320,41 @@ function WhatBuilding() {
   )
 }
 
+// ─── SERVICES TEASER ─────────────────────────────────────────────────────────
+
+function ServicesTeaser() {
+  return (
+    <section className="section-sm" aria-label="Services">
+      <div className="wrap">
+        <Up>
+          <div
+            className="rounded-2xl p-8 lg:p-12 flex flex-col lg:flex-row items-center justify-between gap-8"
+            style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+          >
+            <div className="flex-1">
+              <span className="label">Available for Work</span>
+              <h2 className="font-heading font-semibold tracking-tight mb-3" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.4rem)', lineHeight: 1.15 }}>
+                Need Clinical AI or Healthcare Tech?
+              </h2>
+              <p className="text-lg leading-relaxed mb-0" style={{ color: 'var(--text-muted)' }}>
+                I work with hospitals, pharma companies, AI startups, and research institutions — building clinical AI systems, healthcare datasets, and medication safety infrastructure.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-3 flex-shrink-0">
+              <a href="/services" className="btn-green whitespace-nowrap">
+                View Services <ArrowRight size={16} />
+              </a>
+              <a href="mailto:emmanuelbain@kemirix.com" className="btn-outline whitespace-nowrap">
+                <Mail size={16} /> Get in Touch
+              </a>
+            </div>
+          </div>
+        </Up>
+      </div>
+    </section>
+  )
+}
+
 // ─── ABOUT (compact two-column) ──────────────────────────────────────────────
 
 function About() {
@@ -933,6 +968,7 @@ export default function Page() {
       <main>
         <Hero />
         <WhatBuilding />
+        <ServicesTeaser />
         <About />
         <Highlights />
         <Projects />
