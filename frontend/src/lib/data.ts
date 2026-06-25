@@ -134,8 +134,8 @@ export const PROJECTS = [
     github: null,
   },
   {
-    id: 'acedebit',
-    title: 'Acedebit',
+    id: 'acadebit',
+    title: 'Acadebit',
     category: 'Education Management Platform',
     problem:
       'Schools and educational institutions lack integrated platforms that combine AI-powered learning support with administrative management.',
@@ -148,7 +148,7 @@ export const PROJECTS = [
     status: 'In Development',
     statusColor: 'blue' as const,
     featured: false,
-    link: 'https://www.acedebit.com',
+    link: 'https://www.acadebit.com',
     github: null,
   },
 ]
@@ -170,7 +170,7 @@ export const EXPERIENCE = [
   },
   {
     role: 'Founder',
-    company: 'Acedebit',
+    company: 'Acadebit',
     period: '2025 – Present',
     type: 'Startup',
     contributions: [
@@ -318,5 +318,5 @@ export const HIGHLIGHTS = [
   { text: 'CITI Human Research Ethics Certified', icon: 'award' },
   { text: 'Built and deployed public AI applications', icon: 'rocket' },
   { text: 'Trained 80+ students in science, AI, and programming', icon: 'users' },
-  { text: 'Founder of Acedebit educational technology platform', icon: 'graduation' },
+  { text: 'Founder of Acadebit educational technology platform', icon: 'graduation' },
 ]
