@@ -41,8 +41,8 @@
     background-color: var(--bg);
     color: var(--text);
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 17px;
+    line-height: 1.7;
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 
@@ -75,7 +75,7 @@
   }
 
   .section-title {
-    @apply text-3xl sm:text-4xl font-heading font-semibold tracking-tight;
+    @apply text-4xl sm:text-5xl font-heading font-semibold tracking-tight;
     color: var(--text);
   }
 

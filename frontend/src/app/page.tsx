@@ -9,6 +9,7 @@ import {
   BookOpen, Send, GraduationCap, X,
 } from 'lucide-react'
 import Navbar from '@/components/layout/Navbar'
+import Image from 'next/image'
 import {
   PROJECTS, EXPERIENCE, SKILLS, PUBLIC_PROFILES, HIGHLIGHTS,
 } from '@/lib/data'
@@ -342,7 +343,7 @@ function WhatImBuilding() {
                   <area.Icon size={20} />
                 </div>
                 <h3 className="font-heading font-semibold text-base mb-2">{area.title}</h3>
-                <p className="text-muted text-sm leading-relaxed">{area.description}</p>
+                <p className="text-muted text-base leading-relaxed">{area.description}</p>
               </div>
             </FadeUp>
           ))}
@@ -363,26 +364,19 @@ function AboutSection() {
           <FadeUp className="lg:col-span-2">
             <div className="relative max-w-sm mx-auto lg:mx-0">
               <div
-                className="w-full aspect-[4/5] rounded-2xl overflow-hidden flex items-center justify-center"
+                className="w-full aspect-[4/5] rounded-2xl overflow-hidden relative"
                 style={{
                   background: 'var(--card)',
                   border: '1px solid var(--border)',
                 }}
               >
-                {/*
-                  Replace the placeholder below with:
-                  <Image src="/emmanuel-portrait.jpg" alt="Emmanuel Bain Oduwo" fill className="object-cover" />
-                  once you add the photo to /public/
-                */}
-                <div className="flex flex-col items-center gap-4 py-16 text-muted">
-                  <div
-                    className="w-28 h-28 rounded-full flex items-center justify-center text-3xl font-heading font-bold"
-                    style={{ background: 'var(--border)', color: 'var(--accent-green)' }}
-                  >
-                    EBO
-                  </div>
-                  <span className="text-xs font-mono opacity-60">[ Add photo to /public/ ]</span>
-                </div>
+                <Image
+                  src="/emmanuel-portrait.jpg"
+                  alt="Emmanuel Bain Oduwo"
+                  fill
+                  className="object-cover object-top"
+                  priority
+                />
               </div>
               {/* Accent corner decorations */}
               <div
@@ -483,7 +477,7 @@ function HighlightsSection() {
                   >
                     <Icon size={15} />
                   </div>
-                  <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
+                  <p className="text-base leading-relaxed" style={{ color: 'var(--text)' }}>
                     {h.text}
                   </p>
                 </div>
@@ -512,15 +506,15 @@ function ProjectCard({ project }: { project: typeof PROJECTS[0] }) {
       <div className="space-y-4 mb-6 flex-1">
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-muted mb-1.5">Problem</p>
-          <p className="text-sm leading-relaxed text-muted">{project.problem}</p>
+          <p className="text-base leading-relaxed text-muted">{project.problem}</p>
         </div>
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-muted mb-1.5">Solution</p>
-          <p className="text-sm leading-relaxed text-muted">{project.solution}</p>
+          <p className="text-base leading-relaxed text-muted">{project.solution}</p>
         </div>
         <div>
           <p className="font-mono text-xs uppercase tracking-widest text-muted mb-1.5">Impact</p>
-          <p className="text-sm leading-relaxed" style={{ color: 'var(--text)' }}>
+          <p className="text-base leading-relaxed" style={{ color: 'var(--text)' }}>
             {project.impact}
           </p>
         </div>
@@ -678,7 +672,7 @@ function BuiltDeployedSection() {
                   <h3 className="font-heading font-semibold text-sm leading-tight">{item.title}</h3>
                   <StatusBadge status={item.status} color={item.color} />
                 </div>
-                <p className="text-xs text-muted leading-relaxed flex-1 mb-4">{item.description}</p>
+                <p className="text-sm text-muted leading-relaxed flex-1 mb-4">{item.description}</p>
                 {item.link ? (
                   <a
                     href={item.link}
@@ -764,7 +758,7 @@ function ResearchSection() {
                       color={ds.status === 'Published' ? 'green' : 'blue'}
                     />
                   </div>
-                  <p className="text-xs text-muted mb-3 leading-relaxed">{ds.description}</p>
+                  <p className="text-sm text-muted mb-3 leading-relaxed">{ds.description}</p>
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     {ds.tags.map((t) => <TechTag key={t} tech={t} />)}
                   </div>
@@ -802,7 +796,7 @@ function ResearchSection() {
                   </div>
                   <div>
                     <p className="font-medium text-sm">{cert.title}</p>
-                    <p className="text-xs text-muted mt-0.5">{cert.org}</p>
+                    <p className="text-sm text-muted mt-0.5">{cert.org}</p>
                     <span
                       className="font-mono text-xs mt-1 inline-block"
                       style={{ color: 'var(--accent-green)' }}
@@ -863,8 +857,8 @@ function ExperienceSection() {
                 </div>
                 <ul className="space-y-2.5">
                   {exp.contributions.map((c, j) => (
-                    <li key={j} className="flex items-start gap-2.5 text-sm text-muted">
-                      <CheckCircle size={14} className="text-accent mt-0.5 flex-shrink-0" />
+                    <li key={j} className="flex items-start gap-2.5 text-base text-muted">
+                      <CheckCircle size={15} className="text-accent mt-1 flex-shrink-0" />
                       {c}
                     </li>
                   ))}
@@ -922,7 +916,7 @@ function TeachingSection() {
                   <stat.Icon size={18} />
                 </div>
                 <p className="font-heading font-bold text-3xl text-accent mb-1">{stat.number}</p>
-                <p className="text-xs text-muted leading-relaxed text-center">{stat.label}</p>
+                <p className="text-sm text-muted leading-relaxed text-center">{stat.label}</p>
               </div>
             </FadeUp>
           ))}
@@ -940,7 +934,7 @@ function TeachingSection() {
                 </h4>
                 <ul className="space-y-2">
                   {cat.items.map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-xs text-muted">
+                    <li key={item} className="flex items-center gap-2 text-sm text-muted">
                       <span className="accent-dot flex-shrink-0" />
                       {item}
                     </li>
@@ -1102,7 +1096,7 @@ function PublicProfilesSection() {
                     className="text-muted group-hover:text-accent transition-colors flex-shrink-0"
                   />
                 </div>
-                <p className="text-xs text-muted leading-relaxed">{profile.description}</p>
+                <p className="text-sm text-muted leading-relaxed">{profile.description}</p>
               </a>
             </FadeUp>
           ))}
@@ -1274,7 +1268,7 @@ function ContactSection() {
                     'Speaking or teaching',
                     'Healthcare innovation projects',
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-2 text-xs text-muted">
+                    <li key={item} className="flex items-center gap-2 text-sm text-muted">
                       <span className="accent-dot flex-shrink-0" />
                       {item}
                     </li>
