@@ -6,11 +6,11 @@ import { Menu, X } from 'lucide-react'
 import ThemeToggle from '@/components/ui/ThemeToggle'
 
 const NAV_LINKS = [
-  { href: '#projects', label: 'Projects' },
-  { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
+  { href: '/#projects', label: 'Projects' },
+  { href: '/#experience', label: 'Experience' },
+  { href: '/#skills', label: 'Skills' },
   { href: '/services', label: 'Services' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
@@ -46,7 +46,7 @@ export default function Navbar() {
         aria-label="Primary navigation"
       >
         <a
-          href="#top"
+          href="/"
           className="font-heading font-semibold text-sm tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
           aria-label="Emmanuel Bain Oduwo — home"
         >
@@ -68,7 +68,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <a
-            href="#contact"
+            href="/#contact"
             className="hidden md:inline-flex btn-primary text-xs px-4 py-2"
           >
             Get in touch
@@ -119,7 +119,7 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <motion.a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setMobileOpen(false)}
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
